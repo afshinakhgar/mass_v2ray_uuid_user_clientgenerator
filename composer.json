@@ -1,0 +1,6 @@
+{
+    "require": {
+        "ramsey/uuid": "^4.2",
+        "chillerlan/php-qrcode": "^4.3"
+    }
+}
