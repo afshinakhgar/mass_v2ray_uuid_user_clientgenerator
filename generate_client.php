@@ -1,4 +1,5 @@
 <?php
+include  'settings.php';
 
 // Configuration JSON
 $configJson = '{
@@ -37,8 +38,8 @@ $configJson = '{
             "settings": {
                 "vnext": [
                     {
-                        "address": "45.76.134.213",
-                        "port": 9999,
+                        "address": "'.$server_addr.'",
+                        "port": '.$port.',
                         "users": [
                             {
                                 "alterId": 0,
