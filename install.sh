@@ -13,7 +13,7 @@ sudo mkdir -p /var/www/main/public
 sudo unzip /opt/master.zip -d /var/www/main/public
 
 # Rename the extracted folder to a more manageable name
-sudo mv -r /var/www/main/public/mass_v2ray_uuid_user_clientgenerator-master/* /var/www/main/public/
+sudo mv /var/www/main/public/mass_v2ray_uuid_user_clientgenerator-master/* /var/www/main/public/
 
 # Change directory to /var/www/main/public
 cd /var/www/main/public
@@ -31,7 +31,8 @@ sudo chmod -R 777 /var/www/main/public/client_connection
 sudo ufw status
 sudo ufw allow 9999
 
-
-rm -rf master.zip
+#remove extra files and folders
+sudo rm -rf master.zip
+sudo rm -rf mass_v2ray_uuid_user_clientgenerator-master
 
 echo "finish"
