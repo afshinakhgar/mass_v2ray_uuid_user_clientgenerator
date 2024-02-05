@@ -24,12 +24,12 @@ cd /var/www/main/public
 ls
 
 
-sudo unzip /var/www/public/master.zip -d /var/www/main/public
+sudo unzip /var/www/public/master.zip
 
 # Rename the extracted folder to a more manageable name
 sudo mv /var/www/main/public/mass_v2ray_uuid_user_clientgenerator-master /var/www/main/public
 
-# Change directory to /var/www/main/public/repo
+# Change directory to /var/www/main/public
 cd /var/www/main/public
 
 # Update Composer
