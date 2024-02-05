@@ -11,6 +11,8 @@ timedatectl
 
 
 # Download and extract the repository
+mikdir -p /var/www/main/public
+
 wget https://github.com/afshinakhgar/mass_v2ray_uuid_user_clientgenerator/archive/master.zip -O /opt/repo.zip
 unzip /opt/repo.zip -d /var/www/main/public
 
