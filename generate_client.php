@@ -97,8 +97,8 @@ $uuid = $_GET['uuid']; // Generate a unique ID
 $configArray['outbounds'][0]['settings']['vnext'][0]['users'][0]['id'] = $uuid;
 
 // Assign the desired port and IP address
-$port = 9999; // Replace with the desired port
-$ipAddress = '45.76.134.213'; // Replace with the desired IP address
+$port = $port; // Replace with the desired port
+$ipAddress = '"'.$server_addr.'"'; // Replace with the desired IP address
 $configArray['outbounds'][0]['settings']['vnext'][0]['port'] = $port;
 $configArray['outbounds'][0]['settings']['vnext'][0]['address'] = $ipAddress;
 
