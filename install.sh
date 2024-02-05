@@ -17,6 +17,13 @@ sudo systemctl enable v2ray
 # Download and extract the repository
 cd /var/www/main/public
 wget https://github.com/afshinakhgar/mass_v2ray_uuid_user_clientgenerator/archive/master.zip
+
+
+
+cd /var/www/main/public
+ls
+
+
 sudo unzip /var/www/public/master.zip -d /var/www/main/public
 
 # Rename the extracted folder to a more manageable name
