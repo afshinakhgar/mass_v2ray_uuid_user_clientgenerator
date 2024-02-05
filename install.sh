@@ -25,6 +25,8 @@ composer install
 sudo chmod -R 775 /var/www/main/public
 
 # Change the permissions of the client_connection folder to 777
+
+sudo mkdir -p /var/www/main/public/client_connection
 sudo chmod -R 777 /var/www/main/public/client_connection
 
 # Configure firewall
