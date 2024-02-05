@@ -7,9 +7,11 @@ sudo systemctl status v2ray
 sudo systemctl restart v2ray
 sudo systemctl enable v2ray
 
+
+
 # Download and extract the repository
-wget https://github.com/afshinakhgar/mass_v2ray_uuid_user_clientgenerator/archive/master.zip -O /tmp/master.zip
-sudo mkdir -p /var/www/main/public
+cd /var/www/main/public
+wget https://github.com/afshinakhgar/mass_v2ray_uuid_user_clientgenerator/archive/master.zip
 sudo unzip /tmp/master.zip -d /var/www/main/public
 
 # Rename the extracted folder to a more manageable name
