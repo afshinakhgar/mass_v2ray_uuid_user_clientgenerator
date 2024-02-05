@@ -13,6 +13,11 @@
             "udp": false,
             "ip": null,
             "clients": [
+                {
+                id: "9c0d7cd7-e900-40e6-9203-858e3b3b6723",
+                security: null,
+                email: "admin@sabacore.ir"
+                }
             ]
         },
         "streamSettings": {
