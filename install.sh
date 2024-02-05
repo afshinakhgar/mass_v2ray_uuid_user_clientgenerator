@@ -40,3 +40,6 @@ sudo rm -rf master.zip
 sudo rm -rf mass_v2ray_uuid_user_clientgenerator-master
 
 echo "finish"
+
+
+echo curl www.icanhazip.com
