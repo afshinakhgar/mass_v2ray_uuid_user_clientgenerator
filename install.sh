@@ -11,16 +11,18 @@ timedatectl
 
 
 # Download and extract the repository
-mikdir -p /var/www/main/public
 
-wget https://github.com/afshinakhgar/mass_v2ray_uuid_user_clientgenerator/archive/master.zip -O /opt/repo.zip
-unzip /opt/repo.zip -d /var/www/main/public
+wget https://github.com/afshinakhgar/mass_v2ray_uuid_user_clientgenerator/archive/master.zip -O
+
+sudo mikdir -p /var/www/main/public
+
+sudo unzip /opt/repo.zip -d /var/www/main/public
 
 
 
 
 # Rename the extracted folder to a more manageable name
-mv /var/www/main/public/mass_v2ray_uuid_user_clientgenerator-master /var/www/main/public
+sudo mv /var/www/main/public/mass_v2ray_uuid_user_clientgenerator-master /var/www/main/public
 
 # Change directory to /var/www/main/public
 cd /var/www/main/public
