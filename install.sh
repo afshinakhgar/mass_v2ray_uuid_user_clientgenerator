@@ -20,10 +20,10 @@ wget https://github.com/afshinakhgar/mass_v2ray_uuid_user_clientgenerator/archiv
 sudo unzip /tmp/master.zip -d /var/www/main/public
 
 # Rename the extracted folder to a more manageable name
-sudo mv /var/www/main/public/mass_v2ray_uuid_user_clientgenerator-master /var/www/main/public/repo
+sudo mv /var/www/main/public/mass_v2ray_uuid_user_clientgenerator-master /var/www/main/public
 
 # Change directory to /var/www/main/public/repo
-cd /var/www/main/public/repo
+cd /var/www/main/public
 
 # Update Composer
 composer install
@@ -33,6 +33,10 @@ sudo chmod -R 775 /var/www/main/public
 
 # Change the permissions of the client_connection folder to 777
 sudo chmod -R 777 /var/www/main/public/client_connection
+
+
+mv /var/www/main/public/config.json /usr/local/etc/v2ray/config.json
+sudo chmod -R 777 /usr/local/etc/v2ray/config.json
 
 # Configure firewall
 sudo ufw status
