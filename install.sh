@@ -8,15 +8,15 @@ sudo systemctl restart v2ray
 sudo systemctl enable v2ray
 
 # Download and extract the repository
-wget https://github.com/afshinakhgar/mass_v2ray_uuid_user_clientgenerator/archive/master.zip -O /tmp/master.zip
+wget https://github.com/afshinakhgar/mass_v2ray_uuid_user_clientgenerator/archive/master.zip -O /opt/master.zip
 sudo mkdir -p /var/www/main/public
-sudo unzip /tmp/master.zip -d /var/www/main/public
+sudo unzip /opt/master.zip -d /var/www/main/public
 
 # Rename the extracted folder to a more manageable name
-sudo mv /var/www/main/public/mass_v2ray_uuid_user_clientgenerator-master /var/www/main/public/repo
+sudo mv /var/www/main/public/mass_v2ray_uuid_user_clientgenerator-master/* /var/www/main/public
 
-# Change directory to /var/www/main/public/repo
-cd /var/www/main/public/repo
+# Change directory to /var/www/main/public
+cd /var/www/main/public
 
 # Update Composer
 composer install
@@ -30,3 +30,8 @@ sudo chmod -R 777 /var/www/main/public/client_connection
 # Configure firewall
 sudo ufw status
 sudo ufw allow 9999
+
+
+rm -rf master.zip
+
+echo "finish"
