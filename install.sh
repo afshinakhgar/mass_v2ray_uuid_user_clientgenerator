@@ -1,4 +1,9 @@
 #!/bin/bash
+# install server 
+
+bash <(curl -L https://raw.githubusercontent.com/afshinakhgar/server_automate/master/server.sh) main
+
+
 
 # Install v2ray
 sudo apt install -y curl unzip
