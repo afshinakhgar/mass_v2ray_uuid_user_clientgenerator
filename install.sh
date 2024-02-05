@@ -3,7 +3,7 @@
 #install v2ray
 sudo apt install -y curl unzip
 
-sudo bash -c "$(curl -sSL https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)"
+sudo bash -c "$(curl -sSL -o https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)"
 sudo systemctl status v2ray
 sudo systemctl restart v2ray
 sudo systemctl enable v2ray
