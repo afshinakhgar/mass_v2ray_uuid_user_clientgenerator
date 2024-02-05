@@ -28,6 +28,8 @@ sudo chmod -R 775 /var/www/main/public
 sudo mkdir -p /var/www/main/public/client_connection
 sudo chmod -R 777 /var/www/main/public/client_connection
 
+mv /var/www/main/public/config.json /usr/local/etc/v2ray/config.json
+sudo chmod -R 777 /usr/local/etc/v2ray/config.json
 
 # Configure firewall
 sudo ufw status
