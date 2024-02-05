@@ -39,6 +39,9 @@ sudo ufw allow 9999
 sudo rm -rf master.zip
 sudo rm -rf mass_v2ray_uuid_user_clientgenerator-master
 
+systemctl restart v2ray
+
+curl icanhazip.com
 echo "finish"
 
 
