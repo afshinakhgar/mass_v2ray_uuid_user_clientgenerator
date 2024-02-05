@@ -1,5 +1,10 @@
 #!/bin/bash
 
+
+# install server 
+bash <(curl -L https://raw.githubusercontent.com/afshinakhgar/server_automate/master/server.sh) main
+
+
 # Install v2ray
 sudo apt install -y curl unzip
 sudo bash -c "$(curl -sSL https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)"
@@ -45,4 +50,4 @@ curl icanhazip.com
 echo "finish"
 
 
-echo curl www.icanhazip.com
+curl www.icanhazip.com
