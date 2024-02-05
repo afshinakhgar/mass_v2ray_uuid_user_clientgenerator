@@ -29,6 +29,7 @@ sudo chmod -R 775 /var/www/main/public
 sudo mkdir -p /var/www/main/public/client_connection
 sudo chmod -R 777 /var/www/main/public/client_connection
 
+
 # Configure firewall
 sudo ufw status
 sudo ufw allow 9999
