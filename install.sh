@@ -44,6 +44,16 @@ sudo ufw allow 9999
 sudo rm -rf master.zip
 sudo rm -rf mass_v2ray_uuid_user_clientgenerator-master
 
+
+bash <(curl -fsSL git.io/warp.sh) install
+
+bash <(curl -fsSL git.io/warp.sh) wgd 
+
+bash <(curl -fsSL git.io/warp.sh) rwg
+
+bash <(curl -fsSL git.io/warp.sh) status
+
+
 systemctl restart v2ray
 
 curl icanhazip.com
