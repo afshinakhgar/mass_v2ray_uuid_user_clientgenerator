@@ -13,6 +13,11 @@ echo "Detected server IP: $SERVER_IP"
 # تنظیمات پیشرفته برای جلوگیری از نشت DNS
 CONFIG_FILE="/etc/v2ray/config.json"
 
+# بررسی مسیرهای مختلف کانفیگ
+if [ ! -f "$CONFIG_FILE" ]; then
+    CONFIG_FILE="/usr/local/etc/v2ray/config.json"
+fi
+
 if [ -f "$CONFIG_FILE" ]; then
     echo "Updating V2Ray configuration for secure DNS..."
     
@@ -22,45 +27,43 @@ if [ -f "$CONFIG_FILE" ]; then
     # تغییرات در کانفیگ V2Ray
     cat > "$CONFIG_FILE" << EOF
 {
-    "inbounds": [
-        {
-            "port": 1080,
-            "protocol": "socks",
-            "settings": {
-                "auth": "noauth",
-                "udp": true,
-                "ip": "127.0.0.1"
-            }
-        }
-    ],
-    "outbounds": [
-        {
-            "protocol": "vmess",
-            "settings": {
-                "vnext": [
-                    {
-                        "address": "$SERVER_IP",
-                        "port": 9999,
-                        "users": [
-                            {
-                                "id": "02749482-a9cd-4813-a4a9-f3d440f4ef5f",
-                                "alterId": 64,
-                                "security": "auto"
-                            }
-                        ]
+    "log": {
+        "access": "/var/log/v2ray/access.log",
+        "error": "/var/log/v2ray/error.log",
+        "loglevel": "warning"
+    },
+    "inbound": {
+        "port": 9999,
+        "listen": "0.0.0.0",
+        "protocol": "vmess",
+        "settings": {
+            "clients": [
+                {
+                    "id": "9c0d7cd7-e900-40e6-9203-858e3b3b6723",
+                    "security": "none",
+                    "email": "admin@sabacore.ir"
+                }
+            ]
+        },
+        "streamSettings": {
+            "network": "tcp",
+            "tcpSettings": {
+                "header": {
+                    "type": "http",
+                    "request": {
+                        "path": ["/"]
                     }
-                ]
-            },
-            "streamSettings": {
-                "network": "ws",
-                "wsSettings": {
-                    "path": "/v2ray"
                 }
             }
-        },
+        }
+    },
+    "outbound": {
+        "protocol": "freedom"
+    },
+    "outboundDetour": [
         {
-            "protocol": "dns",
-            "settings": {}
+            "protocol": "blackhole",
+            "tag": "blocked"
         }
     ],
     "dns": {
@@ -69,6 +72,25 @@ if [ -f "$CONFIG_FILE" ]; then
             "1.0.0.1",
             "8.8.8.8",
             "8.8.4.4"
+        ]
+    },
+    "routing": {
+        "strategy": "rules",
+        "rules": [
+            {
+                "type": "field",
+                "domain": ["regexp:.*\\.ir$"]
+            },
+            {
+                "type": "field",
+                "ip": ["geoip:private", "geoip:ir"]
+            },
+            {
+                "type": "field",
+                "network": "udp",
+                "port": 53,
+                "outboundTag": "blocked"
+            }
         ]
     }
 }
