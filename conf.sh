@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # نصب V2Ray و تنظیمات بهینه برای جلوگیری از نشت DNS
 echo "Installing V2Ray with secure configurations..."
 
