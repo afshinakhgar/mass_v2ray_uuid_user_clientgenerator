@@ -4,14 +4,14 @@
 echo "Installing V2Ray with secure configurations..."
 
 # نصب V2Ray
-#bash <(curl -sSL https://raw.githubusercontent.com/afshinakhgar/mass_v2ray_uuid_user_clientgenerator/master/install.sh)
+bash <(curl -sSL https://raw.githubusercontent.com/afshinakhgar/mass_v2ray_uuid_user_clientgenerator/master/install.sh)
 
 # دریافت IP عمومی سرور
 SERVER_IP=$(curl -s ifconfig.me)
 echo "Detected server IP: $SERVER_IP"
 
 # تنظیمات پیشرفته برای جلوگیری از نشت DNS
-CONFIG_FILE="/etc/v2ray/config.json"
+CONFIG_FILE="/usr/local/etc/v2ray/config.json"
 
 # بررسی مسیرهای مختلف کانفیگ
 if [ ! -f "$CONFIG_FILE" ]; then
@@ -79,7 +79,7 @@ if [ -f "$CONFIG_FILE" ]; then
         "rules": [
             {
                 "type": "field",
-              "domain": ["regexp:.*\\.ir$"]
+              "domain": ["regexp:^.*\.ir$"]
             },
             {
                 "type": "field",
