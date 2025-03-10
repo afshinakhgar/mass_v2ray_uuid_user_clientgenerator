@@ -11,7 +11,7 @@ SERVER_IP=$(curl -s ifconfig.me)
 echo "Detected server IP: $SERVER_IP"
 
 # تنظیمات پیشرفته برای جلوگیری از نشت DNS
-CONFIG_FILE="/usr/local/etc/v2ray/config.json"
+    CONFIG_FILE="/usr/local/etc/v2ray/config.json"
 
 # بررسی مسیرهای مختلف کانفیگ
 if [ ! -f "$CONFIG_FILE" ]; then
@@ -75,11 +75,17 @@ if [ -f "$CONFIG_FILE" ]; then
         ]
     },
     "routing": {
+        "domainStrategy": "IPIfNonMatch",
         "strategy": "rules",
         "rules": [
             {
                 "type": "field",
-              "domain": ["regexp:^.*\.ir$"]
+                "outboundTag": "freedom",
+                "domain": ["geosite:google"]
+            },
+            {
+                "type": "field",
+              "domain": ["regexp:^.*\\.ir$"]
             },
             {
                 "type": "field",
