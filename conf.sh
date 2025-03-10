@@ -79,7 +79,7 @@ if [ -f "$CONFIG_FILE" ]; then
         "rules": [
             {
                 "type": "field",
-                "domain": ["regexp:.*\\.ir$"]
+                "domain": [ { "type": "field", "domain": [ "regexp:.\\.ir$" ] } ]
             },
             {
                 "type": "field",
