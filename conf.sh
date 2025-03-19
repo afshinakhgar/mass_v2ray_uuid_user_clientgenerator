@@ -1,19 +1,14 @@
       #!/bin/bash
 
-# نصب V2Ray و تنظیمات بهینه برای جلوگیری از نشت DNS
 echo "Installing V2Ray with secure configurations..."
 
-# نصب V2Ray
 #bash <(curl -sSL https://raw.githubusercontent.com/afshinakhgar/mass_v2ray_uuid_user_clientgenerator/master/install.sh)
 
-# دریافت IP عمومی سرور
-SERVER_IP=$(curl -s ifconfig.me)
+SERVER_IP=$(curl -s https://canhazip.com)
 echo "Detected server IP: $SERVER_IP"
 
-# تنظیمات پیشرفته برای جلوگیری از نشت DNS
     CONFIG_FILE="/usr/local/etc/v2ray/config.json"
 
-# بررسی مسیرهای مختلف کانفیگ
 if [ ! -f "$CONFIG_FILE" ]; then
     CONFIG_FILE="/usr/local/etc/v2ray/config.json"
 fi
@@ -21,10 +16,8 @@ fi
 if [ -f "$CONFIG_FILE" ]; then
     echo "Updating V2Ray configuration for secure DNS..."
     
-    # بکاپ گرفتن از کانفیگ موجود
     cp "$CONFIG_FILE" "$CONFIG_FILE.bak"
     
-    # تغییرات در کانفیگ V2Ray
     cat > "$CONFIG_FILE" << EOF
 {
     "log": {
